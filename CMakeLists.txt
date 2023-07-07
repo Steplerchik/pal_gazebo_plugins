@@ -26,6 +26,9 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 
 ## Plugins
 add_library(gazebo_underactuated_finger SHARED src/gazebo_underactuated_finger.cpp)
+ament_target_dependencies(gazebo_underactuated_finger
+  control_toolbox
+)
 target_link_libraries(gazebo_underactuated_finger ${GAZEBO_LIBRARIES} ${control_toolbox_LIBRARIES})
 
 add_library(pal_gazebo_collisions SHARED src/pal_gazebo_collisions.cpp)
